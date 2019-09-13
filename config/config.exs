@@ -10,17 +10,17 @@ config :discuss,
   ecto_repos: [Discuss.Repo]
 
 # Configures the endpoint
-config :discuss, Discuss.Endpoint,
+config :discuss, DiscussWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "Bmh/Tun3CiiVcWgIGf4P547JWR7aLjIDdsoKTAIGzW9Up1oHCk9qJni2Lc/zJIi4",
-  render_errors: [view: Discuss.ErrorView, accepts: ~w(html json)],
+  secret_key_base: "NCV19Q3mIueFci3FcWOJhoza+lNSoifKBLBd3dbrDi6t9/v9GcWKQ+BoklVfr5rX",
+  render_errors: [view: DiscussWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Discuss.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
-  metadata: [:request_id]
+  metadata: [:user_id]
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
